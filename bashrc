@@ -34,3 +34,18 @@ alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 export GREP_OPTIONS='--exclude-dir=.svn'
 export GREP_OPTIONS='--exclude-dir=.git'
 
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+# PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+# export PATH
+
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# Setting PATH for custom scripts
+PATH="${PATH}:/Users/christianlandin/shell_scripts"
+export PATH
+
+# Set PATH for codecept
+PATH="${PATH}:vendor/bin"
+export PATH
