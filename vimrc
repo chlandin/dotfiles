@@ -36,6 +36,9 @@ set modelines=0
 " Show line numbers
 set number
 
+" Increase linespace
+set linespace=2
+
 " Show ruler bar
 set ruler
 
