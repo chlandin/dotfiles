@@ -164,6 +164,15 @@ nnoremap k gk
 " Use jj to exit insert mode
 inoremap jj <ESC>
 
+"Bubble single lines (kicks butt)
+"http://vimcasts.org/episodes/bubbling-text/
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+
+"Bubble multiple lines
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
+
 " Special characters
 inoremap <leader>a [
 inoremap <leader>s ]
