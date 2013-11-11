@@ -49,3 +49,7 @@ export PATH
 # Set PATH for codecept
 PATH="${PATH}:vendor/bin"
 export PATH
+
+# PATH for mysqldump (for codeception)
+PATH="${PATH}:/Applications/MAMP/Library/bin"
+export PATH
