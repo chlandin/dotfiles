@@ -109,13 +109,13 @@ set incsearch
 
 " GUI Vim settings
 if has("gui_running") 
-    set gfn=Monaco:h10
-    colorscheme desert
-    set guioptions-=r   " Remove scroll bar right
+    set gfn=Monaco:h12
+    colorscheme solarized
+    set background=dark
+    "set guioptions-=r   " Remove scroll bar right
     :set transparency=5 " Transparent background
     set go-=L           " Remove scroll bar left
     "set fu              " Full screen
-    " set background=dark
     highlight Cursor guifg=black guibg=yellow
     let g:netrw_liststyle=3 " Use tree-mode as default view
     let g:netrw_preview=1 " Preview window shown in a vertical split using 'p'
