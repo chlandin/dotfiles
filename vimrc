@@ -234,8 +234,8 @@ au BufRead,BufNewFile *.inc set ft=php.html
 autocmd FileType *.php set ft=php.laravel.html
 autocmd BufEnter *.blade.php set ft=php.laravel.blade.html
 
-" Give a shortcut key to NERD Tree
-map <F7> :NERDTreeToggle<CR>
+" Give a shortcut key to NERD Tree (ctrl+n)
+map <C-n> :NERDTreeToggle<CR>
 
 " *********************************************
 " *                 Functions                 *
