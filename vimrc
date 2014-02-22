@@ -78,12 +78,12 @@ set vb
 "set textwidth=80
 
 " Syntax coloring lines that are too long just slows down the world
-set synmaxcol=200
+" set synmaxcol=300
 
 " Expand tabs to four spaces
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 " Highlight search result
@@ -225,6 +225,10 @@ augroup END " }
 
 " html snippets in php files
 au BufRead,BufNewFile *.php set ft=php.html
+
+" Drupal file types
+au BufRead,BufNewFile *.module set ft=php.html
+au BufRead,BufNewFile *.inc set ft=php.html
 
 "Laravel filetypes
 autocmd FileType *.php set ft=php.laravel.html

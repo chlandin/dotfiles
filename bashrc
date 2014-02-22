@@ -1,6 +1,6 @@
 
 # Always prompt destructive commands
-alias rm='rm -i'
+# alias rm='rm -i'
 alias mv='mv -iv'
 alias cp='cp -iv'
 
