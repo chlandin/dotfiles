@@ -1,4 +1,8 @@
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 # Always prompt destructive commands
 # alias rm='rm -i'
 alias mv='mv -iv'
