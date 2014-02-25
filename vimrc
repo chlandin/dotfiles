@@ -77,10 +77,13 @@ set vb
 " Set the textwidth to 80 chars
 "set textwidth=80
 
+" Yank to system clipboard
+set clipboard=unnamed
+
 " Syntax coloring lines that are too long just slows down the world
 " set synmaxcol=300
 
-" Expand tabs to four spaces
+" Expand tabs to two spaces
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -109,10 +112,10 @@ set incsearch
 
 " GUI Vim settings
 if has("gui_running") 
-    set gfn=Monaco:h12
+    set gfn=Monaco:h10
     colorscheme solarized
     set background=dark
-    "set guioptions-=r   " Remove scroll bar right
+    set guioptions-=r   " Remove scroll bar right
     :set transparency=5 " Transparent background
     set go-=L           " Remove scroll bar left
     "set fu              " Full screen
@@ -227,8 +230,16 @@ augroup END " }
 au BufRead,BufNewFile *.php set ft=php.html
 
 " Drupal file types
-au BufRead,BufNewFile *.module set ft=php.html
-au BufRead,BufNewFile *.inc set ft=php.html
+if has("autocmd")
+  augroup filetypedetect
+    au! BufRead,BufNewFile *.module setfiletype php
+    au! BufRead,BufNewFile *.install setfiletype php
+    au! BufRead,BufNewFile *.test setfiletype php
+    au! BufRead,BufNewFile *.inc setfiletype php
+    au! BufRead,BufNewFile *.profile setfiletype php
+    au! BufRead,BufNewFile *.view setfiletype php
+  augroup END
+endif
 
 "Laravel filetypes
 autocmd FileType *.php set ft=php.laravel.html

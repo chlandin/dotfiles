@@ -15,8 +15,6 @@ alias ls='ls -1'
 alias mkdir='mkdir -p'
 alias c='clear'
 alias ..='cd ..'
-alias htd='cd /Applications/MAMP/htdocs'
-alias con='/Applications/MAMP/Library/bin/mysql -u root -proot'
 
 export CLICOLOR=1
 
@@ -32,7 +30,7 @@ set -o vi
 export EDITOR=vim
 
 # Use latest Vim version in terminal
-alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+#alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 
 # Exclude .svn and .git from grep
 export GREP_OPTIONS='--exclude-dir=.svn'
@@ -51,12 +49,12 @@ PATH="${PATH}:/Users/christianlandin/shell_scripts"
 export PATH
 
 # Set PATH for codecept
-PATH="${PATH}:vendor/bin"
-export PATH
+#PATH="${PATH}:vendor/bin"
+#export PATH
 
 # PATH for mysqldump (for codeception)
-PATH="${PATH}:/Applications/MAMP/Library/bin"
-export PATH
+#PATH="${PATH}:/Applications/MAMP/Library/bin"
+#export PATH
 
 # Path for PHP CLI
 export PATH="$PATH:$(brew --prefix josegonzalez/php/php54)/bin"
