@@ -56,11 +56,15 @@ export PATH
 #PATH="${PATH}:/Applications/MAMP/Library/bin"
 #export PATH
 
+# Homebrew's sbin
+export PATH="/usr/local/sbin:$PATH"
+
 # Path for PHP CLI
 export PATH="$PATH:$(brew --prefix josegonzalez/php/php54)/bin"
 
 # Autoconf needed for phpmyadmin
-PHP_AUTOCONF="/usr/local/bin/autoconf"
+PHP_AUTOCONF="/usr/bin/autoconf"
+
 
 # bash aliases for local server
 alias nginx.start='sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
@@ -78,3 +82,4 @@ alias nginx.logs.default.access='tail -250f /usr/local/etc/nginx/logs/default.ac
 alias nginx.logs.default-ssl.access='tail -250f /usr/local/etc/nginx/logs/default-ssl.access.log'
 alias nginx.logs.phpmyadmin.error='tail -250f /usr/local/etc/nginx/logs/phpmyadmin.error.log'
 alias nginx.logs.phpmyadmin.access='tail -250f /usr/local/etc/nginx/logs/phpmyadmin.access.log'
+export PATH=/usr/local/sbin:$PATH
