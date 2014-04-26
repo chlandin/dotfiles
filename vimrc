@@ -108,15 +108,13 @@ set smartcase
 "Move cursor to matching result
 set incsearch
 
-" Transparent background
-
 " GUI Vim settings
 if has("gui_running") 
-    set gfn=Monaco:h10
-    colorscheme solarized
+    set gfn=Monaco:h12
+    colorscheme desert
     set background=dark
     set guioptions-=r   " Remove scroll bar right
-    :set transparency=5 " Transparent background
+    "set transparency=5 " Transparent background
     set go-=L           " Remove scroll bar left
     "set fu              " Full screen
     highlight Cursor guifg=black guibg=yellow
@@ -246,7 +244,7 @@ autocmd FileType *.php set ft=php.laravel.html
 autocmd BufEnter *.blade.php set ft=php.laravel.blade.html
 
 " Give a shortcut key to NERD Tree (ctrl+n)
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle ~/<CR>
 
 " *********************************************
 " *                 Functions                 *

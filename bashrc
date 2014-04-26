@@ -45,7 +45,7 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Setting PATH for custom scripts
-PATH="${PATH}:/Users/christianlandin/shell_scripts"
+PATH="${PATH}:/Users/christian/shell_scripts"
 export PATH
 
 # Set PATH for codecept
