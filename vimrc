@@ -78,7 +78,7 @@ set vb
 "set textwidth=80
 
 " Yank to system clipboard
-set clipboard=unnamed
+"set clipboard=unnamed
 
 " Syntax coloring lines that are too long just slows down the world
 " set synmaxcol=300
@@ -185,14 +185,6 @@ inoremap <leader>v "
 inoremap <leader>g '
 inoremap <leader>t $
 inoremap <leader>c =
-
-" Direkt Online encoding mess
-inoremap <leader>å &aring;
-inoremap <leader>Å &Aring;
-inoremap <leader>ä &auml;
-inoremap <leader>Ä &Auml;
-inoremap <leader>ö &ouml;
-inoremap <leader>Ö &Ouml;
 
 " Swe keyboard friendly bol and eol, by screen line
 " Normal mode
