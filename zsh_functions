@@ -1,0 +1,25 @@
+# combine cd and ls into cs
+function cs() {
+  cd "$@" && ls -1F
+}
+
+# combine cd and la into ca
+function ca() {
+  cd "$@" && ls -lsahF
+}
+
+# Changing iTerm2 color in MacOSX when SSHing 
+# # Adapted from https://gist.github.com/porras/5856906
+
+function tabc() {
+  NAME=$1; if [ -z "$NAME" ]; then NAME="Default"; fi 
+  echo -e "\033]50;SetProfile=$NAME\a"
+}
+
+function colorssh() {
+  tabc SSH
+  ssh $*
+  tabc
+}
+
+alias ssh='colorssh'
