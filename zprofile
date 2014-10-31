@@ -1,5 +1,4 @@
 # This only runs on user login
-echo "Z shell loaded successfully!"
 echo -n "Welcome "; whoami
 
 # This loads in the configuration in .zshrc

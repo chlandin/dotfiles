@@ -98,6 +98,12 @@ set hlsearch
 " Highlight as you type in search
 set incsearch
 
+" In visual mode, use Y to copy to system clipboard
+vnoremap Y "*y
+
+" In normal mode, do the same with the current line
+nnoremap Y "*yy
+
 " Prevent Vim backup
 set nobackup
 set noswapfile
@@ -113,10 +119,11 @@ set incsearch
 
 " GUI Vim settings
 if has("gui_running") 
-    set gfn=Monaco:h12
+    set gfn=Menlo:h12
     colorscheme desert
     set background=dark
     set guioptions-=r   " Remove scroll bar right
+    set linespace=2
     "set transparency=5 " Transparent background
     set go-=L           " Remove scroll bar left
     "set fu              " Full screen
@@ -124,6 +131,8 @@ if has("gui_running")
     let g:netrw_liststyle=3 " Use tree-mode as default view
     let g:netrw_preview=1 " Preview window shown in a vertical split using 'p'
 endif 
+
+highlight Comment gui=italic
 
 " *********************************************
 " *               Key Bindings                *
@@ -139,16 +148,16 @@ inoremap <leader>, <C-x><C-o>
 inoremap <leader>0 <C-r>0
 
 " Disable arrow keys in normal mode
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
 
 " Disable arrow keys in insert mode
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
 
 "Disable scroll wheel pasting
 nnoremap <MiddleMouse> <Nop>
@@ -178,34 +187,34 @@ vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
 
 " Special characters
-inoremap <leader>a [
-inoremap <leader>s ]
-inoremap <leader>d (
-inoremap <leader>f )
-inoremap <leader>e {
-inoremap <leader>r }
-inoremap <leader>v "
-inoremap <leader>g '
-inoremap <leader>t $
-inoremap <leader>c =
+"inoremap <leader>a [
+"inoremap <leader>s ]
+"inoremap <leader>d (
+"inoremap <leader>f )
+"inoremap <leader>e {
+"inoremap <leader>r }
+"inoremap <leader>v "
+"inoremap <leader>g '
+"inoremap <leader>t $
+"inoremap <leader>c =
 
 " Swe keyboard friendly bol and eol, by screen line
 " Normal mode
-nnoremap B ^
-nnoremap B g^
-nnoremap E $
-nnoremap E g$
+"nnoremap B ^
+"nnoremap B g^
+"nnoremap E $
+"nnoremap E g$
 
 " Visual mode
-vnoremap B ^
-vnoremap B g^
-vnoremap E $
-vnoremap E g$
+"vnoremap B ^
+"vnoremap B g^
+"vnoremap E $
+"vnoremap E g$
 
 " Toggle Paste mode, turns off auto indent
 set pastetoggle=<F2>
 
-" "Uppercase word" mapping.
+" 'Uppercase word' mapping.
 "
 " This mapping allows you to press <c-u> in insert mode to convert the current
 " word to uppercase.  It's handy when you're writing names of constants and
