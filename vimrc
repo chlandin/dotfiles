@@ -1,7 +1,10 @@
 " No compablity with vi
 set nocompatible
 
-" Pathogen - www.github.com/tpope/vim-pathogen -
+" *********************************************
+" *                 Pathogen                  *
+" *     www.github.com/tpope/vim-pathogen     *
+" *********************************************
 
 filetype off
 call pathogen#infect()
@@ -10,8 +13,6 @@ call pathogen#helptags()
 syntax on
 syntax enable
 filetype plugin indent on
-
-" end Pathogen
 
 " *********************************************
 " *                 Settings                  *
@@ -26,15 +27,8 @@ set nrformats=
 " Enable mouse
 set mouse=a
 
-"Change cursor in insert mode
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
 " Prevent security expolits
 set modelines=0
-
-" Show line numbers
-set number
 
 " Increase linespace
 "set linespace=2
@@ -55,9 +49,6 @@ set textwidth=0
 set wrapmargin=0
 set formatoptions+=l
 
-" Keep at least 5 lines above/below the cursor
-set scrolloff=5
-
 " Make the command-line completion better
 set wildmenu
 set wildmode=list:longest,full
@@ -68,41 +59,14 @@ set ofu=syntaxcomplete#Complete
 " Full PHP auto complete
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
-" Color of pop up menu
-highlight Pmenu guibg=brown gui=bold
-
-colorscheme desert
-set background=dark
-
-" Visual bell insted of beeping
-set vb
-
-" Set the textwidth to 80 chars
-"set textwidth=80
-
 " Yank to system clipboard
 "set clipboard=unnamed
-
-" Syntax coloring lines that are too long just slows down the world
-" set synmaxcol=300
 
 " Expand tabs to two spaces
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-
-" Highlight search result
-set hlsearch
-
-" Highlight as you type in search
-set incsearch
-
-" In visual mode, use Y to copy to system clipboard
-vnoremap Y "*y
-
-" In normal mode, do the same with the current line
-nnoremap Y "*yy
 
 " Prevent Vim backup
 set nobackup
@@ -117,29 +81,58 @@ set smartcase
 "Move cursor to matching result
 set incsearch
 
-" GUI Vim settings
-if has("gui_running") 
-    set gfn=Menlo:h12
-    colorscheme desert
-    set background=dark
-    set guioptions-=r   " Remove scroll bar right
-    set linespace=2
-    "set transparency=5 " Transparent background
-    set go-=L           " Remove scroll bar left
-    "set fu              " Full screen
-    highlight Cursor guifg=black guibg=yellow
-    let g:netrw_liststyle=3 " Use tree-mode as default view
-    let g:netrw_preview=1 " Preview window shown in a vertical split using 'p'
-endif 
+" *********************************************
+" *                 Visuals                   *
+" *********************************************
 
-highlight Comment gui=italic
+set laststatus=2
+
+" Keep at least 5 lines above/below the cursor
+set scrolloff=5
+
+" Show line numbers
+set number
+
+set linespace=2
+
+"Change cursor in insert mode
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" Color of pop up menu
+highlight Pmenu guibg=brown gui=bold
+
+" Visual bell insted of beeping
+set vb
+
+" Syntax coloring lines that are too long just slows down the world
+set synmaxcol=300
+
+" Highlight search result
+set hlsearch
+
+" Highlight as you type in search
+set incsearch
+
+set background=dark
+colorscheme solarized
 
 " *********************************************
 " *               Key Bindings                *
 " *********************************************
 
+" In visual mode, use Y to copy to system clipboard
+vnoremap Y "*y
+vnoremap y "*y
+
+" In normal mode, do the same with the current line
+nnoremap Y "*yy
+
 " change the mapleader from \ to ,
 let mapleader=","
+
+" Backspace normal behaviour
+set backspace=2
 
 " omnicompletion : words
 inoremap <leader>, <C-x><C-o>
@@ -185,31 +178,6 @@ nmap <C-Down> ddp
 "Bubble multiple lines
 vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
-
-" Special characters
-"inoremap <leader>a [
-"inoremap <leader>s ]
-"inoremap <leader>d (
-"inoremap <leader>f )
-"inoremap <leader>e {
-"inoremap <leader>r }
-"inoremap <leader>v "
-"inoremap <leader>g '
-"inoremap <leader>t $
-"inoremap <leader>c =
-
-" Swe keyboard friendly bol and eol, by screen line
-" Normal mode
-"nnoremap B ^
-"nnoremap B g^
-"nnoremap E $
-"nnoremap E g$
-
-" Visual mode
-"vnoremap B ^
-"vnoremap B g^
-"vnoremap E $
-"vnoremap E g$
 
 " Toggle Paste mode, turns off auto indent
 set pastetoggle=<F2>
